@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Dynamique</title>
+    <title>Streaming Mauve</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1 class="title">Bienvenue</h1>
-            <p class="subtitle">Explorez notre contenu dynamique</p>
+            <h1 class="title">Streaming Mauve</h1>
+            <nav>
+                <button class="nav-btn active" data-filter="all">Tout</button>
+                <button class="nav-btn" data-filter="films">Films</button>
+                <button class="nav-btn" data-filter="series">Séries</button>
+            </nav>
         </header>
 
-        <main class="button-container">
-            <button class="nav-btn" onclick="navigateTo('images')">Images</button>
-            <button class="nav-btn" onclick="navigateTo('videos')">Vidéos</button>
-            <button class="nav-btn" onclick="navigateTo('articles')">Articles</button>
+        <main class="video-grid">
+            <!-- Les vidéos seront insérées dynamiquement via JS -->
         </main>
+
+        <div class="video-player" id="player">
+            <video controls id="video-element"></video>
+            <button class="close-btn" onclick="closePlayer()">✖</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
