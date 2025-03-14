@@ -1,9 +1,13 @@
-// Données simulées de vidéos
+// Données simulées avec nouvelles catégories
 const videos = [
-    { title: "Film d'action", type: "films", thumbnail: "https://via.placeholder.com/250x150.png?text=Film+Action", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
-    { title: "Série comique", type: "series", thumbnail: "https://via.placeholder.com/250x150.png?text=Série+Comique", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
-    { title: "Thriller", type: "films", thumbnail: "https://via.placeholder.com/250x150.png?text=Thriller", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
-    { title: "Série dramatique", type: "series", thumbnail: "https://via.placeholder.com/250x150.png?text=Série+Dramatique", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
+    { title: "Action Explosive", type: "films", thumbnail: "https://via.placeholder.com/280x180.png?text=Action", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
+    { title: "Comédie Légère", type: "series", thumbnail: "https://via.placeholder.com/280x180.png?text=Comédie", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
+    { title: "Nature Sauvage", type: "documentaires", thumbnail: "https://via.placeholder.com/280x180.png?text=Nature", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
+    { title: "Aventure Animée", type: "animes", thumbnail: "https://via.placeholder.com/280x180.png?text=Animé", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
+    { title: "Thriller Sombre", type: "films", thumbnail: "https://via.placeholder.com/280x180.png?text=Thriller", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
+    { title: "Série Romantique", type: "series", thumbnail: "https://via.placeholder.com/280x180.png?text=Romance", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
+    { title: "Espace Infini", type: "documentaires", thumbnail: "https://via.placeholder.com/280x180.png?text=Espace", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
+    { title: "Combat Épique", type: "animes", thumbnail: "https://via.placeholder.com/280x180.png?text=Combat", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
 ];
 
 // Sélection des éléments
@@ -15,13 +19,15 @@ const navButtons = document.querySelectorAll('.nav-btn');
 // Afficher les vidéos initialement
 renderVideos('all');
 
-// Filtrer les vidéos
+// Filtrer les vidéos avec animation
 navButtons.forEach(button => {
     button.addEventListener('click', () => {
         navButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
         const filter = button.getAttribute('data-filter');
-        renderVideos(filter);
+        videoGrid.style.opacity = '0';
+        setTimeout(() => renderVideos(filter), 300);
+        setTimeout(() => videoGrid.style.opacity = '1', 400);
     });
 });
 
@@ -29,9 +35,10 @@ function renderVideos(filter) {
     videoGrid.innerHTML = '';
     const filteredVideos = filter === 'all' ? videos : videos.filter(v => v.type === filter);
     
-    filteredVideos.forEach(video => {
+    filteredVideos.forEach((video, index) => {
         const card = document.createElement('div');
         card.classList.add('video-card');
+        card.style.animationDelay = `${index * 0.1}s`;
         card.innerHTML = `
             <img src="${video.thumbnail}" alt="${video.title}">
             <h3>${video.title}</h3>
