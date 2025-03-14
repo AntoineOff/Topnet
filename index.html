@@ -3,57 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allo Cougar - Rencontres Audacieuses</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Site Dynamique</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <h1>Allo Cougar</h1>
-    </div>
     <div class="container">
-        <div class="intro">
-            Rencontrez des femmes audacieuses et vivez des moments inoubliables !
-        </div>
-        <a href="#" class="cta-button" id="openModal">Inscrivez-vous gratuitement</a>
-        <div class="features">
-            <div class="feature-box">
-                <h2>Chat Instantané</h2>
-                <p>Discutez en direct avec des membres connectés.</p>
-            </div>
-            <div class="feature-box">
-                <h2>Profils Vérifiés</h2>
-                <p>Rencontrez des personnes authentiques.</p>
-            </div>
-            <div class="feature-box">
-                <h2>100% Discret</h2>
-                <p>Votre vie privée est notre priorité.</p>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <p>© 2025 Allo Cougar - Tous droits réservés</p>
-    </footer>
+        <header>
+            <h1 class="title">Bienvenue</h1>
+            <p class="subtitle">Explorez notre contenu dynamique</p>
+        </header>
 
-    <!-- Modale d'inscription -->
-    <div id="signupModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Inscription</h2>
-            <form id="signupForm">
-                <label for="username">Pseudo :</label>
-                <input type="text" id="username" name="username" required>
-                
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="password">Mot de passe :</label>
-                <input type="password" id="password" name="password" required>
-                
-                <button type="submit" class="cta-button">S'inscrire</button>
-            </form>
-        </div>
+        <main class="button-container">
+            <button class="nav-btn" onclick="navigateTo('images')">Images</button>
+            <button class="nav-btn" onclick="navigateTo('videos')">Vidéos</button>
+            <button class="nav-btn" onclick="navigateTo('articles')">Articles</button>
+        </main>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
