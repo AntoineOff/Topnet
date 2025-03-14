@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Streaming Mauve</title>
+    <title>Streaming Pastel</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1 class="title">Streaming Mauve</h1>
-            <nav>
+            <h1 class="title">Streaming Pastel</h1>
+            <nav class="nav-bar">
                 <button class="nav-btn active" data-filter="all">Tout</button>
                 <button class="nav-btn" data-filter="films">Films</button>
                 <button class="nav-btn" data-filter="series">Séries</button>
+                <button class="nav-btn" data-filter="documentaires">Documentaires</button>
+                <button class="nav-btn" data-filter="animes">Animés</button>
             </nav>
         </header>
 
         <main class="video-grid">
-            <!-- Les vidéos seront insérées dynamiquement via JS -->
+            <!-- Les vidéos seront insérées via JS -->
         </main>
 
         <div class="video-player" id="player">
-            <video controls id="video-element"></video>
-            <button class="close-btn" onclick="closePlayer()">✖</button>
+            <div class="player-content">
+                <video controls id="video-element"></video>
+                <button class="close-btn" onclick="closePlayer()">✖</button>
+            </div>
         </div>
     </div>
 
