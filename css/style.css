@@ -6,17 +6,15 @@
 }
 
 body {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #4b2671, #8a4af5);
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: #fff;
 }
 
 .container {
-    text-align: center;
     padding: 20px;
-    opacity: 0;
+    max-width: 1200px;
+    margin: 0 auto;
     animation: fadeIn 1s ease forwards;
 }
 
@@ -26,49 +24,102 @@ body {
 }
 
 .title {
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    animation: slideIn 0.8s ease;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e0cfff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.subtitle {
-    color: #ddd;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.button-container {
+nav {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
 .nav-btn {
-    padding: 15px 30px;
-    font-size: 1.1rem;
+    padding: 10px 20px;
+    background: #6b3fa0;
     border: none;
-    border-radius: 25px;
-    background: #fff;
-    color: #2a5298;
+    border-radius: 20px;
+    color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.nav-btn:hover {
+.nav-btn:hover, .nav-btn.active {
+    background: #9b59d0;
+    transform: scale(1.05);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
     transform: translateY(-5px);
-    background: #2a5298;
-    color: white;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.nav-btn:active {
-    transform: translateY(0);
+.video-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
 }
 
-/* Animation d'entrée pour le titre */
-@keyframes slideIn {
-    from { transform: translateX(-100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+.video-card h3 {
+    padding: 10px;
+    font-size: 1.1rem;
+    color: #e0cfff;
+}
+
+.video-player {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.video-player.active {
+    display: flex;
+}
+
+#video-element {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #9b59d0;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #c77dff;
 }
